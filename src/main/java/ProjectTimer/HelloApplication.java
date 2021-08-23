@@ -31,7 +31,7 @@ public class HelloApplication extends Application {
         // pane setup
         BorderPane layout = new BorderPane();
 //        File file = new File("C:\\Users\\user\\IdeaProjects\\ThreeStepExercisesJavaFX\\treeImage.jpg");
-        File file = new File("C:\\Users\\user\\IdeaProjects\\ProjectTimer\\src\\main\\resources\\treeImage.jpg");
+        File file = new File("/home/anthony/IdeaProjects/ProjectTimer/src/main/resources/treeImage.jpg");
         Image image = new Image (file.toURI().toString());
         layout.setBackground(new Background(new BackgroundImage(image,BackgroundRepeat.NO_REPEAT,
                 BackgroundRepeat.NO_REPEAT,
@@ -104,7 +104,7 @@ public class HelloApplication extends Application {
             DateFormat timeFormat = SimpleDateFormat.getTimeInstance();
 
             if (!ticker.isPauseOn()) {
-                timer.schedule(runner, 0, 1);
+                timer.schedule(runner, 0, 1000);
                 timerStarted.setText("Timer started at: " + timeFormat.format(new Date()));
             }
             if (ticker.isHasRestartedOn()) {

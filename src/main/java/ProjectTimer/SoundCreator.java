@@ -20,7 +20,7 @@ public class SoundCreator {
     public AudioClip randomAudio() {
         int randomGet = this.ran.nextInt(this.fileNames.size() - 1);
 //        AudioClip audioOutput = new AudioClip("file:" + this.fileNames.get(randomGet));
-        File file = new File("C:\\Users\\user\\IdeaProjects\\ProjectTimer\\src\\main\\resources\\" + this.fileNames.get(randomGet));
+        File file = new File("/home/anthony/IdeaProjects/ProjectTimer/src/main/resources/" + this.fileNames.get(randomGet));
         System.out.println(file.toURI().toString());
         AudioClip test = new AudioClip(file.toURI().toString());
 

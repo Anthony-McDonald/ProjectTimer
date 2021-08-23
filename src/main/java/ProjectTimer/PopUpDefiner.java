@@ -28,24 +28,24 @@ public class PopUpDefiner {
         this.restart = restart;
     }
 
-    public PopupMenu menuReturner() {
+    public void menuReturner() {
 
 
         //-------------------------------------------------------------------
+        if (System.getProperty("os.name").startsWith("Windows")) {
+            // doesnt exit when last app window is shut
+            Platform.setImplicitExit(false);
 
-        // doesnt exit when last app window is shut
-        Platform.setImplicitExit(false);
+            // tray icon set up using method below
+            javax.swing.SwingUtilities.invokeLater(this::addAppToTray);
 
-        // tray icon set up using method below
-        javax.swing.SwingUtilities.invokeLater(this::addAppToTray);
-
-        // give outstage transparent style
-        stage.initStyle(StageStyle.UNIFIED);
+            // give outstage transparent style
+            stage.initStyle(StageStyle.UNIFIED);
+        }
 
 
 
 
-        return popup;
     }
 
     private void addAppToTray() {
